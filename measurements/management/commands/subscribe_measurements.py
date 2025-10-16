@@ -10,7 +10,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         # Configuración: lee de settings o variables de entorno (fallback a tus valores)
-        rabbit_host = getattr(settings, "RABBIT_HOST", os.environ.get("RABBIT_HOST", "host"))
+        rabbit_host = getattr(settings, "RABBIT_HOST", os.environ.get("RABBIT_HOST", "172.31.22.207"))
         rabbit_user = getattr(settings, "RABBIT_USER", os.environ.get("RABBIT_USER", "monitoring_user"))
         rabbit_password = getattr(settings, "RABBIT_PASSWORD", os.environ.get("RABBIT_PASSWORD", "isis2503"))
         exchange = getattr(settings, "RABBIT_EXCHANGE", os.environ.get("RABBIT_EXCHANGE", "monitoring_measurements"))
